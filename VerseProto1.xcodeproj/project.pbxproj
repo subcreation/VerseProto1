@@ -17,6 +17,8 @@
 		B221B76226AF45620057CAF7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221B74E26AF45610057CAF7 /* Persistence.swift */; };
 		B221B76326AF45620057CAF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B221B74F26AF45620057CAF7 /* Assets.xcassets */; };
 		B221B76426AF45620057CAF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B221B74F26AF45620057CAF7 /* Assets.xcassets */; };
+		B221B77026AF470A0057CAF7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B221B76F26AF470A0057CAF7 /* CloudKit.framework */; };
+		B221B77326AF47820057CAF7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B221B77226AF47820057CAF7 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,10 @@
 		B221B74F26AF45620057CAF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B221B75426AF45620057CAF7 /* VerseProto1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerseProto1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B221B75A26AF45620057CAF7 /* VerseProto1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerseProto1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B221B76D26AF47050057CAF7 /* VerseProto1 (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VerseProto1 (iOS).entitlements"; sourceTree = "<group>"; };
+		B221B76F26AF470A0057CAF7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		B221B77126AF477D0057CAF7 /* VerseProto1 (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VerseProto1 (macOS).entitlements"; sourceTree = "<group>"; };
+		B221B77226AF47820057CAF7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B221B77026AF470A0057CAF7 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B221B77326AF47820057CAF7 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +58,11 @@
 		B221B74426AF45600057CAF7 = {
 			isa = PBXGroup;
 			children = (
+				B221B77126AF477D0057CAF7 /* VerseProto1 (macOS).entitlements */,
+				B221B76D26AF47050057CAF7 /* VerseProto1 (iOS).entitlements */,
 				B221B74926AF45610057CAF7 /* Shared */,
 				B221B75526AF45620057CAF7 /* Products */,
+				B221B76E26AF470A0057CAF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +85,15 @@
 				B221B75A26AF45620057CAF7 /* VerseProto1.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B221B76E26AF470A0057CAF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B221B77226AF47820057CAF7 /* CloudKit.framework */,
+				B221B76F26AF470A0057CAF7 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VerseProto1 (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6AABZ45T5H;
@@ -341,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VerseProto1 (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6AABZ45T5H;
@@ -372,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VerseProto1 (macOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -401,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VerseProto1 (macOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;

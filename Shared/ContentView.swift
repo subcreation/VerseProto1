@@ -17,6 +17,16 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
+        #if os(iOS)
+        NavigationView {
+            itemsView
+        }
+        #else
+        itemsView
+        #endif
+    }
+    
+    var itemsView: some View {
         List {
             ForEach(items) { item in
                 Text("Item at \(item.timestamp!, formatter: itemFormatter)")
@@ -24,10 +34,6 @@ struct ContentView: View {
             .onDelete(perform: deleteItems)
         }
         .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
             Button(action: addItem) {
                 Label("Add Item", systemImage: "plus")
             }
