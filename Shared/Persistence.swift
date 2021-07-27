@@ -14,8 +14,18 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newPoem = Poem(context: viewContext)
+            newPoem.title = "Preview Poem"
+            newPoem.body = """
+the preview poem had a body
+had a poem preview body
+had a poem preview
+had a body
+preview
+a body
+poem
+"""
+            newPoem.createdDate = Date()
         }
         do {
             try viewContext.save()
