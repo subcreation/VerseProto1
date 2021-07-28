@@ -19,4 +19,8 @@ final class EditPoemViewModel: ObservableObject {
         
         PersistenceController.shared.save()
     }
+    
+    func poemIsStarted() -> Bool {
+        return !title.isEmpty || !body.isEmpty
+    }
 }

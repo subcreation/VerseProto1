@@ -15,6 +15,9 @@ struct PoemsView: View {
             ForEach(viewModel.poems) { poem in
                 Text(poem.title ?? "Unknown Title")
             }
+            .onDelete { index in
+                viewModel.delete(at: index)
+            }
         }
         .navigationBarItems(trailing:
             Button {

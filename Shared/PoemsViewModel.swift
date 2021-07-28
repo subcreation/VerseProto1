@@ -14,4 +14,13 @@ final class PoemsViewModel: ObservableObject {
     func fetchAllPoems() {
         poems = PersistenceController.shared.fetchPoems()
     }
+    
+    func delete(at index: IndexSet) {
+        guard let indexRow = index.first else { return }
+        let poemToDelete = poems[indexRow]
+        PersistenceController.shared.viewContext.delete(poemToDelete)
+        PersistenceController.shared.save()
+        
+        fetchAllPoems()
+    }
 }
