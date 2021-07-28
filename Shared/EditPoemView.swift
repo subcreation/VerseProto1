@@ -19,6 +19,7 @@ struct EditPoemView: View {
                 .font(.title2)
         }
         .padding()
+        #if os(iOS)
         .navigationBarItems(trailing:
             Button {
                 self.mode.wrappedValue.dismiss()
@@ -31,9 +32,11 @@ struct EditPoemView: View {
                 viewModel.createNewPoem()
             }
         }
+        #endif
     }
 }
 
+#if os(iOS)
 struct WillDisappearHandler: UIViewControllerRepresentable {
     func makeCoordinator() -> WillDisappearHandler.Coordinator {
         Coordinator(onWillDisappear: onWillDisappear)
@@ -83,6 +86,7 @@ extension View {
         self.modifier(WillDisappearModifier(callback: perform))
     }
 }
+#endif
 
 struct EditPoemView_Previews: PreviewProvider {
     static var previews: some View {

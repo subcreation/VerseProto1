@@ -11,13 +11,10 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
-        #if os(iOS)
         NavigationView {
             PoemsView()
         }
-        #else
-        PoemsView()
-        #endif
+        .navigationTitle("")
     }
 }
 

@@ -19,6 +19,8 @@ struct PoemsView: View {
                 viewModel.delete(at: index)
             }
         }
+        .listStyle(SidebarListStyle())
+        #if os(iOS)
         .navigationBarItems(trailing:
             Button {
                 viewModel.isNavigationLinkActive = true
@@ -26,6 +28,17 @@ struct PoemsView: View {
                 Image(systemName: "plus")
                     .font(.title)
             })
+        #else
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                Button(action: {
+                    viewModel.isNavigationLinkActive = true
+                }) {
+                    Label("Add Item", systemImage: "square.and.pencil")
+                }
+            }
+        }
+        #endif
         .background(
             NavigationLink(destination: EditPoemView(), isActive: $viewModel.isNavigationLinkActive) {
                 EmptyView()
