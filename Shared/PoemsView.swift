@@ -16,6 +16,19 @@ struct PoemsView: View {
                 Text(poem.title ?? "Unknown Title")
             }
         }
+        .navigationBarItems(trailing:
+            Button {
+                viewModel.isNavigationLinkActive = true
+            } label: {
+                Image(systemName: "plus")
+                    .font(.title)
+            })
+        .background(
+            NavigationLink(destination: EditPoemView(), isActive: $viewModel.isNavigationLinkActive) {
+                EmptyView()
+            }
+                .hidden()
+        )
         .onAppear {
             viewModel.fetchAllPoems()
         }

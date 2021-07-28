@@ -54,6 +54,14 @@ poem
         })
     }
     
+    func save() {
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error saving to CoreData: ", error.localizedDescription)
+        }
+    }
+    
     func fetchPoems() -> [Poem] {
         let request: NSFetchRequest<Poem> = Poem.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Poem.createdDate, ascending: true)]
@@ -64,4 +72,6 @@ poem
             return []
         }
     }
+    
+    
 }

@@ -23,6 +23,10 @@
 		B221B79026B0A4620057CAF7 /* PoemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221B78E26B0A4620057CAF7 /* PoemsView.swift */; };
 		B221B79226B0A58E0057CAF7 /* PoemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221B79126B0A58E0057CAF7 /* PoemsViewModel.swift */; };
 		B221B79326B0A58E0057CAF7 /* PoemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221B79126B0A58E0057CAF7 /* PoemsViewModel.swift */; };
+		B221B79526B0B9430057CAF7 /* EditPoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221B79426B0B9430057CAF7 /* EditPoemView.swift */; };
+		B221B79626B0B9430057CAF7 /* EditPoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221B79426B0B9430057CAF7 /* EditPoemView.swift */; };
+		B221B79826B0C2210057CAF7 /* EditPoemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221B79726B0C2210057CAF7 /* EditPoemViewModel.swift */; };
+		B221B79926B0C2210057CAF7 /* EditPoemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221B79726B0C2210057CAF7 /* EditPoemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,8 @@
 		B221B77226AF47820057CAF7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		B221B78E26B0A4620057CAF7 /* PoemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemsView.swift; sourceTree = "<group>"; };
 		B221B79126B0A58E0057CAF7 /* PoemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemsViewModel.swift; sourceTree = "<group>"; };
+		B221B79426B0B9430057CAF7 /* EditPoemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPoemView.swift; sourceTree = "<group>"; };
+		B221B79726B0C2210057CAF7 /* EditPoemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPoemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,8 @@
 				B221B74D26AF45610057CAF7 /* ContentView.swift */,
 				B221B78E26B0A4620057CAF7 /* PoemsView.swift */,
 				B221B79126B0A58E0057CAF7 /* PoemsViewModel.swift */,
+				B221B79426B0B9430057CAF7 /* EditPoemView.swift */,
+				B221B79726B0C2210057CAF7 /* EditPoemViewModel.swift */,
 				B221B74E26AF45610057CAF7 /* Persistence.swift */,
 				B221B74F26AF45620057CAF7 /* Assets.xcassets */,
 				B221B74A26AF45610057CAF7 /* VerseProto1.xcdatamodeld */,
@@ -202,10 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B221B79526B0B9430057CAF7 /* EditPoemView.swift in Sources */,
 				B221B75D26AF45620057CAF7 /* VerseProto1App.swift in Sources */,
 				B221B78F26B0A4620057CAF7 /* PoemsView.swift in Sources */,
 				B221B76126AF45620057CAF7 /* Persistence.swift in Sources */,
 				B221B79226B0A58E0057CAF7 /* PoemsViewModel.swift in Sources */,
+				B221B79826B0C2210057CAF7 /* EditPoemViewModel.swift in Sources */,
 				B221B75B26AF45620057CAF7 /* VerseProto1.xcdatamodeld in Sources */,
 				B221B75F26AF45620057CAF7 /* ContentView.swift in Sources */,
 			);
@@ -215,10 +225,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B221B79626B0B9430057CAF7 /* EditPoemView.swift in Sources */,
 				B221B75E26AF45620057CAF7 /* VerseProto1App.swift in Sources */,
 				B221B79026B0A4620057CAF7 /* PoemsView.swift in Sources */,
 				B221B76226AF45620057CAF7 /* Persistence.swift in Sources */,
 				B221B79326B0A58E0057CAF7 /* PoemsViewModel.swift in Sources */,
+				B221B79926B0C2210057CAF7 /* EditPoemViewModel.swift in Sources */,
 				B221B75C26AF45620057CAF7 /* VerseProto1.xcdatamodeld in Sources */,
 				B221B76026AF45620057CAF7 /* ContentView.swift in Sources */,
 			);
@@ -354,7 +366,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,7 +397,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
