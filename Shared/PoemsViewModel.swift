@@ -8,8 +8,9 @@
 import SwiftUI
 
 final class PoemsViewModel: ObservableObject {
-    @Published var poems:[Poem] = []
+    @Published var poems: [Poem] = []
     @Published var isNavigationLinkActive = false
+    @Published var selectedPoem: Poem?
     
     func fetchAllPoems() {
         poems = PersistenceController.shared.fetchPoems()

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditPoemView: View {
-    @StateObject var viewModel = EditPoemViewModel()
+    @ObservedObject var viewModel: EditPoemViewModel
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
@@ -17,6 +17,9 @@ struct EditPoemView: View {
                 .font(.largeTitle)
             TextEditor(text: $viewModel.body)
                 .font(.title2)
+        }
+        .onAppear {
+            viewModel.setUpEditingView()
         }
         .padding()
         #if os(iOS)
@@ -29,7 +32,7 @@ struct EditPoemView: View {
         )
         .onWillDisappear {
             if viewModel.poemIsStarted() {
-                viewModel.createNewPoem()
+                viewModel.savePoem()
             }
         }
         #endif
@@ -90,6 +93,6 @@ extension View {
 
 struct EditPoemView_Previews: PreviewProvider {
     static var previews: some View {
-        EditPoemView()
+        EditPoemView(viewModel: EditPoemViewModel(poemToEdit: nil))
     }
 }

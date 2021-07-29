@@ -52,6 +52,8 @@ poem
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        viewContext.automaticallyMergesChangesFromParent = true
+        viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
     
     func save() {

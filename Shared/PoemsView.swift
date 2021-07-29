@@ -14,6 +14,10 @@ struct PoemsView: View {
         List {
             ForEach(viewModel.poems) { poem in
                 Text(poem.title ?? "Unknown Title")
+                    .onTapGesture {
+                        viewModel.isNavigationLinkActive = true
+                        viewModel.selectedPoem = poem
+                    }
             }
             .onDelete { index in
                 viewModel.delete(at: index)
@@ -40,12 +44,13 @@ struct PoemsView: View {
         }
         #endif
         .background(
-            NavigationLink(destination: EditPoemView(), isActive: $viewModel.isNavigationLinkActive) {
+            NavigationLink(destination: EditPoemView(viewModel: EditPoemViewModel(poemToEdit: viewModel.selectedPoem)), isActive: $viewModel.isNavigationLinkActive) {
                 EmptyView()
             }
-                .hidden()
+            .hidden()
         )
         .onAppear {
+            viewModel.selectedPoem = nil
             viewModel.fetchAllPoems()
         }
     }
